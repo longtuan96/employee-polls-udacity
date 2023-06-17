@@ -13,6 +13,7 @@ import DashBoardPage from "./components/DashBoardPage";
 import { fetchQuestionList } from "./redux/slices/questionSlice";
 import LeaderBoardPage from "./components/LeaderBoardPage";
 import PollPage from "./components/PollPage";
+import NewPollPage from "./components/NewPollPage";
 
 function App() {
   const isAuthenticated = useSelector(selectIsAuthenticated);
@@ -21,6 +22,7 @@ function App() {
     dispatch(fetchUserList());
     dispatch(fetchQuestionList());
     dispatch(checkAuth());
+    // eslint-disable-next-line
   }, []);
 
   return (
@@ -53,15 +55,15 @@ function App() {
             </ProtectedRoute>
           }
         />
-        {/* <Route
-          path="/new"
+        <Route
+          path="/add"
           exact
           element={
             <ProtectedRoute>
-              <NewPoll />
+              <NewPollPage />
             </ProtectedRoute>
           }
-        /> */}
+        />
         <Route path="/404" exact element={<NotFoundPage />} />
       </Routes>
     </div>

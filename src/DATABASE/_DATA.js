@@ -213,7 +213,6 @@ export function _saveQuestionAnswer({ authedUser, qid, answer }) {
           },
         },
       };
-
       resolve(true);
     }, 500);
   });

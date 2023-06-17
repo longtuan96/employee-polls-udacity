@@ -1,0 +1,9 @@
+.poll-page-container {
+  text-align: center;
+  .custom-btn {
+    height: fit-content;
+  }
+  .btn-highlight {
+    background-color: chartreuse;
+  }
+}

@@ -27,7 +27,7 @@ const NavBar = () => {
     <nav className="nav-bar">
       <Link to="/">Home</Link>
       <Link to="/leaderboard">Leaderboard</Link>
-      <Link to="/new">New Poll</Link>
+      <Link to="/add">New Poll</Link>
       <span data-testid="user-information">{currentUserName}</span>
       <button onClick={() => handleLogout()}>Logout</button>
     </nav>
