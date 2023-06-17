@@ -10,12 +10,14 @@ import { Route, Routes } from "react-router-dom";
 import ProtectedRoute from "./components/ProtectedRoute";
 import { fetchUserList } from "./redux/slices/userSlice";
 import DashBoardPage from "./components/DashBoardPage";
+import { fetchQuestionList } from "./redux/slices/questionSlice";
 
 function App() {
   const isAuthenticated = useSelector(selectIsAuthenticated);
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(fetchUserList());
+    dispatch(fetchQuestionList());
     dispatch(checkAuth());
   }, []);
 

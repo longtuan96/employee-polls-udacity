@@ -4,6 +4,10 @@ const formatUserInfo = (data = {}) => {
   return Object.values(data);
 };
 
+const formatQuestionInfo = (data = {}) => {
+  return Object.values(data);
+};
+
 const formatUserInfoToOptions = (data = []) => {
   if (data.length > 0) {
     return data.map((item) => {
@@ -11,4 +15,9 @@ const formatUserInfoToOptions = (data = []) => {
     });
   }
 };
-export { formatUserInfo, formatUserInfoToOptions };
+
+const findQuestion = (questionId, questionList = []) => {
+  if (!!questionId && questionList.length > 0) {
+  }
+};
+export { formatUserInfo, formatUserInfoToOptions, formatQuestionInfo };
