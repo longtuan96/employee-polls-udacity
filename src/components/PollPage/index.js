@@ -14,7 +14,7 @@ import { Button, Space } from "antd";
 const PollPage = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const currentQuestionId = useParams().id;
+  const currentQuestionId = useParams().question_id;
   const authedUserId = useSelector(selectAuthedUserId);
   const questionListRedux = useSelector(selectQuestionList);
   const userListRedux = useSelector(selectUserList);

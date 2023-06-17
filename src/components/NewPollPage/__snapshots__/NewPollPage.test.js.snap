@@ -1,0 +1,196 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NewPoll should render the component 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <div
+        class="new-poll-page-container"
+      >
+        <h1
+          class=""
+        >
+          Would You Rather
+        </h1>
+        <form>
+          <div
+            class=""
+          >
+            <label
+              class=""
+              for="firstOption"
+            >
+              First Option
+            </label>
+            <div
+              class=""
+            >
+              <input
+                class=""
+                data-testid="firstOptionInput"
+                id="firstOption"
+                name="firstOption"
+                type="text"
+                value=""
+              />
+            </div>
+          </div>
+          <div
+            class=""
+          >
+            <label
+              class=""
+              for="secondOption"
+            >
+              Second Option
+            </label>
+            <div
+              class=""
+            >
+              <input
+                class=""
+                data-testid="secondOptionInput"
+                id="secondOption"
+                name="secondOption"
+                type="text"
+                value=""
+              />
+            </div>
+          </div>
+          <div
+            class=""
+          >
+            <button
+              class=""
+              data-testid="submit-btn"
+              type="submit"
+            >
+              Submit
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      class="new-poll-page-container"
+    >
+      <h1
+        class=""
+      >
+        Would You Rather
+      </h1>
+      <form>
+        <div
+          class=""
+        >
+          <label
+            class=""
+            for="firstOption"
+          >
+            First Option
+          </label>
+          <div
+            class=""
+          >
+            <input
+              class=""
+              data-testid="firstOptionInput"
+              id="firstOption"
+              name="firstOption"
+              type="text"
+              value=""
+            />
+          </div>
+        </div>
+        <div
+          class=""
+        >
+          <label
+            class=""
+            for="secondOption"
+          >
+            Second Option
+          </label>
+          <div
+            class=""
+          >
+            <input
+              class=""
+              data-testid="secondOptionInput"
+              id="secondOption"
+              name="secondOption"
+              type="text"
+              value=""
+            />
+          </div>
+        </div>
+        <div
+          class=""
+        >
+          <button
+            class=""
+            data-testid="submit-btn"
+            type="submit"
+          >
+            Submit
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;

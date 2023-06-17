@@ -37,15 +37,11 @@ const NewPollPage = () => {
     navigate("/");
   };
   return (
-    <div>
+    <div className="new-poll-page-container">
       <h1 className="">Would You Rather</h1>
       <form onSubmit={handleSubmit}>
         <div className="">
-          <label
-            htmlFor="firstOption"
-            data-testid="firstOptionLabel"
-            className=""
-          >
+          <label htmlFor="firstOption" className="">
             First Option
           </label>
           <div className="">
@@ -55,18 +51,14 @@ const NewPollPage = () => {
               type="text"
               name="firstOption"
               id="firstOption"
-              data-testid="firstOption"
+              data-testid="firstOptionInput"
               className=""
             />
           </div>
         </div>
 
         <div className="">
-          <label
-            htmlFor="secondOption"
-            data-testid="secondOptionLabel"
-            className=""
-          >
+          <label htmlFor="secondOption" className="">
             Second Option
           </label>
           <div className="">
@@ -76,14 +68,14 @@ const NewPollPage = () => {
               type="text"
               name="secondOption"
               id="secondOption"
-              data-testid="secondOption"
+              data-testid="secondOptionInput"
               className=""
             />
           </div>
         </div>
 
         <div className="">
-          <button type="submit" className="">
+          <button type="submit" className="" data-testid="submit-btn">
             Submit
           </button>
         </div>

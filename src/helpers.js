@@ -1,5 +1,3 @@
-import { _getUsers } from "./DATABASE/_DATA";
-
 const formatUserInfo = (data = {}) => {
   return Object.values(data);
 };
@@ -16,8 +14,4 @@ const formatUserInfoToOptions = (data = []) => {
   }
 };
 
-const findQuestion = (questionId, questionList = []) => {
-  if (!!questionId && questionList.length > 0) {
-  }
-};
 export { formatUserInfo, formatUserInfoToOptions, formatQuestionInfo };

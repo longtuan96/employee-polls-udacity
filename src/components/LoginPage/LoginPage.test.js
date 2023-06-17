@@ -1,16 +1,17 @@
-import React from "react";
 import { render } from "@testing-library/react";
 import { Provider } from "react-redux";
-import { store } from "./redux/store";
-import App from "./App";
 import { BrowserRouter } from "react-router-dom";
+import React from "react";
 
-describe("Checking the first Step of the App", () => {
+import { store } from "../../redux/store";
+import LoginPage from ".";
+
+describe("Testing Login Page", () => {
   it("should render the component", () => {
     const component = render(
       <Provider store={store}>
         <BrowserRouter>
-          <App />
+          <LoginPage />
         </BrowserRouter>
       </Provider>
     );
@@ -18,15 +19,17 @@ describe("Checking the first Step of the App", () => {
     expect(component).toMatchSnapshot();
   });
 
-  it("should show Login page when not logged in", () => {
+  it("should display all required elements", () => {
     const component = render(
       <Provider store={store}>
         <BrowserRouter>
-          <App />
+          <LoginPage />
         </BrowserRouter>
       </Provider>
     );
-    const heading = component.getByTestId("login-header");
-    expect(heading).toBeInTheDocument();
+
+    const loginHeader = component.getByTestId("login-header");
+
+    expect(loginHeader.textContent).toBe("Login");
   });
 });

@@ -1,7 +1,4 @@
-import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { _getUsers } from "../../DATABASE/_DATA";
-import { formatUserInfo } from "../../helpers";
-import { useNavigate } from "react-router-dom";
+import { createSlice } from "@reduxjs/toolkit";
 
 export const authSlice = createSlice({
   name: "auth",
