@@ -14,7 +14,6 @@ export const userSlice = createSlice({
       let userId = localStorage.getItem("userId");
       if (userId) {
         state.currentUser = state.userList.find((el) => el.id === userId);
-        console.log("run", state.userList);
       }
     },
   },
@@ -25,7 +24,7 @@ export const userSlice = createSlice({
       })
       .addCase(fetchUserList.fulfilled, (state, action) => {
         state.status = "idle";
-        state.list = action.payload;
+        state.userList = action.payload;
       });
   },
 });
@@ -40,7 +39,7 @@ export const fetchUserList = createAsyncThunk("user/getUserList", async () => {
 export const { getUserDetail } = userSlice.actions;
 
 // Setup selectors for using in other files
-const selectUserList = (state) => state.user.list;
+const selectUserList = (state) => state.user.userList;
 const selectUserStatus = (state) => state.user.status;
 const selectCurrentUser = (state) => state.user.currentUser;
 export { selectUserList, selectUserStatus, selectCurrentUser };
