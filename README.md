@@ -1,46 +1,27 @@
-# Getting Started with Create React App and Redux
+# Final Project - Employee Polls - TuanTL1
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) template.
+This is my Employee Polls Project for Udacity.
 
-## Available Scripts
+# Reason for this repo
 
-In the project directory, you can run:
+this is the repo for my project since i worked locally and will submit with this repo.
 
-### `npm start`
+# How it work?
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+How EmployeePolls Works
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Employee Polls is an app that allows users to add the polls and their peers can see and answer their question.It also allow User to keep track of unanswer polls and answered polls
 
-### `npm test`
+1.  **Main Page**: When users open the app, they will need to log in by using the select input.After logged in, the user can see their answer and unanswer polls
+2.  **LeaderBoardPage**: on this Page, user can check to see who is best at answering polls
+3.  **NewPollPage**: this page allows user to add new polls.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Installation and running
 
-### `npm run build`
+To get started using the program right away:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- make sure you have install Nodejs
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- install all project dependencies with `npm install`
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+- start the development server with `npm start`
