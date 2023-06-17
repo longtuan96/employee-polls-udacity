@@ -1,0 +1,11 @@
+.leaderboard-container {
+  .leaderboard-table {
+    width: 100%;
+    border: 1px solid black;
+  }
+  .cell {
+    text-align: center;
+    border-bottom: 1px solid black;
+    border-left: 1px solid black;
+  }
+}

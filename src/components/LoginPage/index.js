@@ -28,7 +28,7 @@ const LoginPage = () => {
   };
   return (
     <div className="login-page-container">
-      <h1>Login</h1>
+      <h1 data-testid="login-header">Login</h1>
       <p>Please select a person</p>
       <Select
         style={{ width: 120 }}
