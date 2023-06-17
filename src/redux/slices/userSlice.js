@@ -7,6 +7,7 @@ export const userSlice = createSlice({
   initialState: {
     status: "idle",
     userList: [],
+    userListSorted: [],
     currentUser: {},
   },
   reducers: {
@@ -25,6 +26,10 @@ export const userSlice = createSlice({
       .addCase(fetchUserList.fulfilled, (state, action) => {
         state.status = "idle";
         state.userList = action.payload;
+        state.userListSorted = action.payload.sort(
+          (a, b) =>
+            Object.keys(b.answers).length - Object.keys(a.answers).length
+        );
       });
   },
 });
@@ -40,8 +45,14 @@ export const { getUserDetail } = userSlice.actions;
 
 // Setup selectors for using in other files
 const selectUserList = (state) => state.user.userList;
+const selectUserListSorted = (state) => state.user.userListSorted;
 const selectUserStatus = (state) => state.user.status;
 const selectCurrentUser = (state) => state.user.currentUser;
-export { selectUserList, selectUserStatus, selectCurrentUser };
+export {
+  selectUserList,
+  selectUserStatus,
+  selectCurrentUser,
+  selectUserListSorted,
+};
 
 export default userSlice.reducer;
