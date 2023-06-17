@@ -46,7 +46,11 @@ const DashBoardPage = () => {
                     title={
                       <div>
                         {question.author}
-                        <p>{moment(question.timestamp).format("DD-MM-YYYY")}</p>
+                        <p>
+                          {moment(question.timestamp).format(
+                            "DD-MM-YYYY|HH:MM:SS"
+                          )}
+                        </p>
                       </div>
                     }
                   >
@@ -68,7 +72,11 @@ const DashBoardPage = () => {
                     title={
                       <div>
                         {question.author}
-                        <p>{moment(question.timestamp).format("DD-MM-YYYY")}</p>
+                        <p>
+                          {moment(question.timestamp).format(
+                            "DD-MM-YYYY|HH:MM:SS"
+                          )}
+                        </p>
                       </div>
                     }
                   >

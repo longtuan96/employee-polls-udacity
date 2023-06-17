@@ -11,6 +11,8 @@ import ProtectedRoute from "./components/ProtectedRoute";
 import { fetchUserList } from "./redux/slices/userSlice";
 import DashBoardPage from "./components/DashBoardPage";
 import { fetchQuestionList } from "./redux/slices/questionSlice";
+import LeaderBoardPage from "./components/LeaderBoardPage";
+import PollPage from "./components/PollPage";
 
 function App() {
   const isAuthenticated = useSelector(selectIsAuthenticated);
@@ -34,30 +36,30 @@ function App() {
             </ProtectedRoute>
           }
         />
-        {/* <Route
+        <Route
           path="/leaderboard"
           exact
           element={
-            <PrivateRoute>
-              <Leaderboard />
-            </PrivateRoute>
+            <ProtectedRoute>
+              <LeaderBoardPage />
+            </ProtectedRoute>
           }
-        /> */}
-        {/* <Route
+        />
+        <Route
           path="/questions/:id"
           element={
-            <PrivateRoute>
+            <ProtectedRoute>
               <PollPage />
-            </PrivateRoute>
+            </ProtectedRoute>
           }
-        /> */}
+        />
         {/* <Route
           path="/new"
           exact
           element={
-            <PrivateRoute>
+            <ProtectedRoute>
               <NewPoll />
-            </PrivateRoute>
+            </ProtectedRoute>
           }
         /> */}
         <Route path="/404" exact element={<NotFoundPage />} />
