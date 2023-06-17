@@ -15,6 +15,7 @@ export const authSlice = createSlice({
     checkAuth: (state, action) => {
       if (localStorage.getItem("userId")) {
         state.isAuthenticated = true;
+        state.authedUserId = localStorage.getItem("userId");
       }
     },
     login: (state, action) => {

@@ -6,18 +6,18 @@ import { selectUserList } from "../../redux/slices/userSlice";
 import { logout, selectAuthedUserId } from "../../redux/slices/authSlice";
 
 const NavBar = () => {
-  const [currentUserDetail, setCurrentUserDetail] = useState({});
   const currentUserId = useSelector(selectAuthedUserId);
   const userListRedux = useSelector(selectUserList);
-
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const [currentUserName, setCurrentUserName] = useState("");
+
   useEffect(() => {
-    if (!!currentUserId) {
+    if (!!currentUserId && userListRedux.length > 0) {
       const userDetail = userListRedux.find((el) => el.id === currentUserId);
-      setCurrentUserDetail(userDetail);
+      setCurrentUserName(userDetail.name);
     }
-  }, [currentUserId]);
+  }, [userListRedux, currentUserId]);
 
   const handleLogout = () => {
     dispatch(logout());
@@ -28,7 +28,7 @@ const NavBar = () => {
       <Link to="/">Home</Link>
       <Link to="/leaderboard">Leaderboard</Link>
       <Link to="/new">New Poll</Link>
-      <span data-testid="user-information">{currentUserDetail.name}</span>
+      <span data-testid="user-information">{currentUserName}</span>
       <button onClick={() => handleLogout()}>Logout</button>
     </nav>
   );

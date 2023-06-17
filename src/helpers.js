@@ -5,7 +5,7 @@ const formatUserInfo = (data = {}) => {
 };
 
 const formatQuestionInfo = (data = {}) => {
-  return Object.values(data);
+  return Object.values(data).sort((a, b) => b.timestamp - a.timestamp);
 };
 
 const formatUserInfoToOptions = (data = []) => {
