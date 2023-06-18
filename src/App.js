@@ -19,9 +19,11 @@ function App() {
   const isAuthenticated = useSelector(selectIsAuthenticated);
   const dispatch = useDispatch();
   useEffect(() => {
+    localStorage.clear();
+    dispatch(checkAuth());
     dispatch(fetchUserList());
     dispatch(fetchQuestionList());
-    dispatch(checkAuth());
+
     // eslint-disable-next-line
   }, []);
 

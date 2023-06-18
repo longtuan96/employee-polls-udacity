@@ -12,7 +12,7 @@ const DashBoardPage = () => {
   const [questions, setQuestions] = useState([]);
   const userListRedux = useSelector(selectUserList);
   const authedUserId = useSelector(selectAuthedUserId);
-  const [showUnanswered, setShowUnanswered] = useState(false);
+  const [showAnswered, setShowAnswered] = useState(false);
   useEffect(() => {
     if (questionListRedux.length > 0) setQuestions(questionListRedux);
   }, [userListRedux, questionListRedux, authedUserId]);
@@ -24,33 +24,33 @@ const DashBoardPage = () => {
     question.optionOne.votes.includes(authedUserId) ||
     question.optionTwo.votes.includes(authedUserId);
   const handleCheckBox = (e) => {
-    setShowUnanswered(e.target.checked);
+    setShowAnswered(e.target.checked);
   };
   return (
     <div className="dash-board-container">
       <header>
         <h1>DASHBOARD</h1>
       </header>
-      <Checkbox onChange={handleCheckBox}>Show Unanswered Polls?</Checkbox>
-      {showUnanswered ? (
-        <section className="unanswered-section">
-          <h1>Unanswered Questions</h1>
-          <Row>
-            {questions.length > 0 &&
-              questions
-                .filter(isUnanswered)
-                .map((question) => (
-                  <QuestionCard key={question.id} question={question} />
-                ))}
-          </Row>
-        </section>
-      ) : (
+      <Checkbox onChange={handleCheckBox}>Show Answered Polls?</Checkbox>
+      {showAnswered ? (
         <section className="answered-section">
           <h1>Answered Questions</h1>
           <Row gutter={16}>
             {questions.length > 0 &&
               questions
                 .filter(isAnswered)
+                .map((question) => (
+                  <QuestionCard key={question.id} question={question} />
+                ))}
+          </Row>
+        </section>
+      ) : (
+        <section className="unanswered-section">
+          <h1>Unanswered Questions</h1>
+          <Row>
+            {questions.length > 0 &&
+              questions
+                .filter(isUnanswered)
                 .map((question) => (
                   <QuestionCard key={question.id} question={question} />
                 ))}
