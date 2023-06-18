@@ -8,7 +8,7 @@ import {
   saveAnswer,
   selectQuestionList,
 } from "../../redux/slices/questionSlice";
-import { selectUserList } from "../../redux/slices/userSlice";
+import { fetchUserList, selectUserList } from "../../redux/slices/userSlice";
 import { Button, Space } from "antd";
 
 const PollPage = () => {
@@ -63,6 +63,7 @@ const PollPage = () => {
       })
     );
     dispatch(fetchQuestionList());
+    dispatch(fetchUserList());
   };
 
   const handleOptionTwo = (e) => {
@@ -75,6 +76,7 @@ const PollPage = () => {
       })
     );
     dispatch(fetchQuestionList());
+    dispatch(fetchUserList());
   };
 
   const calcPercentage = (option, question) => {

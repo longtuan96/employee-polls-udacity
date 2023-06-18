@@ -5,13 +5,14 @@ import { selectQuestionList } from "../../redux/slices/questionSlice";
 import { selectUserList } from "../../redux/slices/userSlice";
 import { selectAuthedUserId } from "../../redux/slices/authSlice";
 import QuestionCard from "../QuestionCard";
-import { Row } from "antd";
+import { Checkbox, Row } from "antd";
 
 const DashBoardPage = () => {
   const questionListRedux = useSelector(selectQuestionList);
   const [questions, setQuestions] = useState([]);
   const userListRedux = useSelector(selectUserList);
   const authedUserId = useSelector(selectAuthedUserId);
+  const [showUnanswered, setShowUnanswered] = useState(false);
   useEffect(() => {
     if (questionListRedux.length > 0) setQuestions(questionListRedux);
   }, [userListRedux, questionListRedux, authedUserId]);
@@ -22,34 +23,40 @@ const DashBoardPage = () => {
   const isAnswered = (question) =>
     question.optionOne.votes.includes(authedUserId) ||
     question.optionTwo.votes.includes(authedUserId);
-
+  const handleCheckBox = (e) => {
+    setShowUnanswered(e.target.checked);
+  };
   return (
     <div className="dash-board-container">
       <header>
         <h1>DASHBOARD</h1>
       </header>
-      <section className="answered-section">
-        <h1>Answered Questions</h1>
-        <Row gutter={16}>
-          {questions.length > 0 &&
-            questions
-              .filter(isAnswered)
-              .map((question) => (
-                <QuestionCard key={question.id} question={question} />
-              ))}
-        </Row>
-      </section>
-      <section className="unanswered-section">
-        <h1>Unanswered Questions</h1>
-        <Row>
-          {questions.length > 0 &&
-            questions
-              .filter(isUnanswered)
-              .map((question) => (
-                <QuestionCard key={question.id} question={question} />
-              ))}
-        </Row>
-      </section>
+      <Checkbox onChange={handleCheckBox}>Show Unanswered Polls?</Checkbox>
+      {showUnanswered ? (
+        <section className="unanswered-section">
+          <h1>Unanswered Questions</h1>
+          <Row>
+            {questions.length > 0 &&
+              questions
+                .filter(isUnanswered)
+                .map((question) => (
+                  <QuestionCard key={question.id} question={question} />
+                ))}
+          </Row>
+        </section>
+      ) : (
+        <section className="answered-section">
+          <h1>Answered Questions</h1>
+          <Row gutter={16}>
+            {questions.length > 0 &&
+              questions
+                .filter(isAnswered)
+                .map((question) => (
+                  <QuestionCard key={question.id} question={question} />
+                ))}
+          </Row>
+        </section>
+      )}
     </div>
   );
 };

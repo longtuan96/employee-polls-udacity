@@ -7,6 +7,7 @@ import {
   fetchQuestionList,
   saveQuestion,
 } from "../../redux/slices/questionSlice";
+import { fetchUserList } from "../../redux/slices/userSlice";
 
 const NewPollPage = () => {
   const navigate = useNavigate();
@@ -34,6 +35,7 @@ const NewPollPage = () => {
     };
     dispatch(saveQuestion(payload));
     dispatch(fetchQuestionList());
+    dispatch(fetchUserList());
     navigate("/");
   };
   return (
