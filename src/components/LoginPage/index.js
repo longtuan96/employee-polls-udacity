@@ -5,11 +5,12 @@ import { useDispatch, useSelector } from "react-redux";
 import { getUserDetail, selectUserList } from "../../redux/slices/userSlice";
 import { formatUserInfoToOptions } from "../../helpers";
 import { login } from "../../redux/slices/authSlice";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const LoginPage = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const { state } = useLocation();
   const userListRedux = useSelector(selectUserList);
   const [options, setOptions] = useState([]);
   const [selectedUserId, setSelectedUserId] = useState(undefined);
@@ -21,7 +22,7 @@ const LoginPage = () => {
   const handleLogin = () => {
     dispatch(login(selectedUserId));
     dispatch(getUserDetail());
-    navigate("/");
+    navigate(state?.path || "/");
   };
   const handleSelect = (userid) => {
     setSelectedUserId(userid);
